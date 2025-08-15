@@ -1,0 +1,1328 @@
+{
+    "meta": {
+        "title": "Fundamental Programming I Midterm Exam",
+        "missing_numbers": []
+    },
+    "questions": [
+        {
+            "no": 1,
+            "question": "ในสถาปัตยกรรมคอมพิวเตอร์ หน่วยใดทำหน้าที่คำนวณเชิงคณิตศาสตร์และตรรกะ",
+            "choices": [
+                "CPU",
+                "ALU",
+                "CU",
+                "Register"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 2,
+            "question": "ข้อใดคือหน้าที่ของ Control Unit (CU)",
+            "choices": [
+                "จัดเก็บข้อมูลชั่วคราว",
+                "ควบคุมการไหลของการทำงานและการถ่ายโอนข้อมูล",
+                "ทำการบวกและลบข้อมูล",
+                "จัดเก็บโปรแกรมระยะยาว"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 3,
+            "question": "หน่วยความจำหลัก (Main Memory) มีองค์ประกอบใดบ้าง",
+            "choices": [
+                "RAM และ ROM",
+                "HDD และ SSD",
+                "Cache และ Register",
+                "USB และ CD-ROM"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 4,
+            "question": "ไฟล์ที่ได้จากการแปลงโค้ด C เป็นภาษาเครื่องแต่ยังไม่สามารถรันได้คือ",
+            "choices": [
+                "Source file",
+                "Object file",
+                "Executable file",
+                "Library file"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 5,
+            "question": "การรวมไฟล์ object และไลบรารีเข้าด้วยกันเพื่อสร้างไฟล์รันได้ เรียกว่าอะไร",
+            "choices": [
+                "Compiling",
+                "Linking",
+                "Executing",
+                "Debugging"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 6,
+            "question": "ชนิดข้อมูลใดที่ใช้เก็บตัวอักษรหนึ่งตัวในภาษา C",
+            "choices": [
+                "char",
+                "int",
+                "float",
+                "double"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 7,
+            "question": "ชนิดข้อมูล float มีขนาดกี่ไบต์",
+            "choices": [
+                "2",
+                "4",
+                "8",
+                "16"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 8,
+            "question": "ข้อใดต่อไปนี้เป็น literal ของชนิด double",
+            "choices": [
+                "3.14",
+                "1.234f",
+                "'x'",
+                "0b1011"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 9,
+            "question": "ตัวระบุ (Identifier) ในภาษา C ไม่สามารถขึ้นต้นด้วยอะไร",
+            "choices": [
+                "ตัวอักษร",
+                "ตัวเลข",
+                "ขีดล่าง (_)",
+                "ตัวพิมพ์ใหญ่"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 10,
+            "question": "ตัวดำเนินการใดใช้หาค่าที่เหลือจากการหาร",
+            "choices": [
+                "+",
+                "-",
+                "%",
+                "/"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 11,
+            "question": "ถ้า a = 10, b = 5, c = 1 แล้วคำสั่ง a += b + c; จะได้ค่า a เป็นเท่าใด",
+            "choices": [
+                "6",
+                "16",
+                "20",
+                "4"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 12,
+            "question": "สัญลักษณ์ %d ใน printf() ใช้แสดงผลข้อมูลชนิดใด",
+            "choices": [
+                "int",
+                "float",
+                "double",
+                "string"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 13,
+            "question": "ในการใช้ scanf() กับข้อมูลชนิด double ควรใช้ format specifier อะไร",
+            "choices": [
+                "%f",
+                "%d",
+                "%lf",
+                "%c"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 14,
+            "question": "unsigned char มีค่าช่วงข้อมูลตั้งแต่",
+            "choices": [
+                "0 ถึง 127",
+                "0 ถึง 255",
+                "-128 ถึง 127",
+                "-255 ถึง 255"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 15,
+            "question": "เมื่อเกิด integer overflow กับ unsigned char (8 บิต) ที่มีค่า 250 บวก 20 ผลลัพธ์จะเป็นเท่าใด",
+            "choices": [
+                "270",
+                "14",
+                "255",
+                "0"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 16,
+            "question": "float ใน C สามารถเก็บค่ามีความแม่นยำได้ประมาณกี่หลักทศนิยม",
+            "choices": [
+                "4 หลัก",
+                "7 หลัก",
+                "16 หลัก",
+                "20 หลัก"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 17,
+            "question": "สัญลักษณ์ใดใช้กำหนดค่าคงที่ด้วย preprocessor",
+            "choices": [
+                "#define",
+                "const",
+                "static",
+                "typedef"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 18,
+            "question": "การตั้งชื่อค่าคงที่ PI แทน 3.14159 เป็นตัวอย่างของการทำอะไร",
+            "choices": [
+                "Encapsulation",
+                "Value abstraction",
+                "Data hiding",
+                "Polymorphism"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 19,
+            "question": "char '8' และ int 8 แตกต่างกันอย่างไร",
+            "choices": [
+                "เหมือนกันทุกประการ",
+                "char '8' คือรหัสตัวอักษร ส่วน int 8 คือค่าตัวเลข",
+                "char '8' ใช้พื้นที่มากกว่า",
+                "int 8 ใช้เก็บตัวอักษร"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 20,
+            "question": "การจัดสรร 23 บิตสำหรับ significand และ 7 บิตสำหรับ exponent เป็นคุณสมบัติของชนิดข้อมูลใด",
+            "choices": [
+                "double",
+                "float",
+                "long double",
+                "int"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 21,
+            "question": "เงื่อนไขใน if statement ต้องเป็นชนิดข้อมูลใด",
+            "choices": [
+                "Integer",
+                "Floating-point",
+                "Boolean expression",
+                "Character"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 22,
+            "question": "ในภาษา C ค่า 0 ถือว่าเป็นค่าอะไรในเชิงตรรกะ",
+            "choices": [
+                "true",
+                "false",
+                "null",
+                "undefined"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 23,
+            "question": "ในภาษา C ค่าใดต่อไปนี้จะถูกพิจารณาว่าเป็น true",
+            "choices": [
+                "0",
+                "1",
+                "-5",
+                "ทั้ง 1 และ -5"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 24,
+            "question": "ตัวดำเนินการเปรียบเทียบใดมีความหมายว่า 'ไม่เท่ากับ'",
+            "choices": [
+                "!=",
+                "==",
+                "<=",
+                ">="
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 25,
+            "question": "ในลำดับความสำคัญของตัวดำเนินการ logical operator ข้อใดมีลำดับสูงสุด",
+            "choices": [
+                "&&",
+                "||",
+                "!",
+                "=="
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 26,
+            "question": "ข้อใดคือข้อผิดพลาดที่พบบ่อยใน if statement",
+            "choices": [
+                "ใช้ == แทน =",
+                "ใช้ = แทน ==",
+                "ใช้ ; เกินมา",
+                "ไม่ใส่วงเล็บครอบเงื่อนไข"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 27,
+            "question": "เหตุใดจึงไม่ควรเปรียบเทียบค่า floating-point ด้วย ==",
+            "choices": [
+                "เพราะเปรียบเทียบได้ช้า",
+                "เพราะค่าอาจไม่ตรงเนื่องจากความไม่แม่นยำ",
+                "เพราะจะทำให้เกิด segmentation fault",
+                "เพราะไม่รองรับในภาษา C"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 28,
+            "question": "วิธีที่ถูกต้องในการตรวจสอบความเท่ากันของ floating-point คือ",
+            "choices": [
+                "ใช้ ==",
+                "ใช้ !=",
+                "ตรวจสอบว่าผลต่างมีค่าน้อยกว่าค่า tolerance",
+                "เปลี่ยนเป็น integer ก่อนเปรียบเทียบ"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 29,
+            "question": "โค้ด `if (choice < 0 || choice > 9) { ... }` เป็นตัวอย่างของแนวคิดใด",
+            "choices": [
+                "Loop control",
+                "Defensive programming",
+                "Short-circuit evaluation",
+                "Error handling แบบ hardware"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 30,
+            "question": "การใช้ { } ครอบหลายคำสั่งใน if เรียกว่าอะไร",
+            "choices": [
+                "Function scope",
+                "Block statement",
+                "Macro block",
+                "Statement chaining"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 31,
+            "question": "ข้อใดคือ syntax ของ if … else",
+            "choices": [
+                "if (condition) statement1 else statement2",
+                "if (condition) { statement1 } elseif (condition) { statement2 }",
+                "if (condition) statement1 elseif statement2",
+                "if condition then statement1 else statement2"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 32,
+            "question": "dangling else เกิดจากสาเหตุใด",
+            "choices": [
+                "มี else เกินมา",
+                "else จับคู่กับ if ที่ไม่ตั้งใจเนื่องจากไม่มี { }",
+                "ใช้ else ผิดตำแหน่ง",
+                "ใส่วงเล็บใน if ผิด"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 33,
+            "question": "multiway selection ใน C มักเขียนด้วยโครงสร้างใด",
+            "choices": [
+                "if … else if … else",
+                "switch … case",
+                "ทั้ง A และ B",
+                "loop"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 34,
+            "question": "ตัวดำเนินการเงื่อนไขแบบ ternary มีลักษณะอย่างไร",
+            "choices": [
+                "cond ? a : b",
+                "if cond then a else b",
+                "a ? b ? c",
+                "cond :: a :: b"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 35,
+            "question": "ควรใช้ ternary operator เมื่อใด",
+            "choices": [
+                "เมื่อมีสองค่าที่ต้องเลือก",
+                "เมื่อมีหลายคำสั่งต้องเลือกทำ",
+                "เมื่อเขียน loop",
+                "เมื่อเปรียบเทียบ string"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 36,
+            "question": "จากปัญหา Minimum of the three ข้อใดคือขั้นตอนแรกใน algorithm",
+            "choices": [
+                "เปรียบเทียบ a และ b",
+                "อ่านค่าจำนวนเต็ม a, b, c",
+                "กำหนดค่า min = a",
+                "เปรียบเทียบ c กับ min"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 37,
+            "question": "การเขียน `min = a < b ? a : b;` เป็นการใช้โครงสร้างใด",
+            "choices": [
+                "if … else",
+                "ternary operator",
+                "macro",
+                "function call"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 38,
+            "question": "ในปัญหา Minimum of the three ถ้า a=5, b=2, c=9 ผลลัพธ์คืออะไร",
+            "choices": [
+                "5",
+                "2",
+                "9",
+                "7"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 39,
+            "question": "ในปัญหา Minimum of the three ถ้า a=3, b=2, c=1 ผลลัพธ์คืออะไร",
+            "choices": [
+                "3",
+                "2",
+                "1",
+                "0"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 40,
+            "question": "การสลับค่าระหว่างสองตัวแปรต้องใช้ตัวแปรชั่วคราวเพื่อป้องกันอะไร",
+            "choices": [
+                "ค่าหาย",
+                "เกิด error",
+                "ค่าซ้ำกัน",
+                "overflow"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 41,
+            "question": "ถ้าใช้ `a = b; b = a;` ในการสลับค่าจะเกิดอะไรขึ้น",
+            "choices": [
+                "สลับค่าถูกต้อง",
+                "ค่าทั้งคู่เป็นค่าเดิม",
+                "ค่าทั้งคู่เป็นค่า b",
+                "ค่าทั้งคู่เป็นค่า a"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 42,
+            "question": "การใช้ short-circuit evaluation หมายถึงอะไร",
+            "choices": [
+                "ประเมินทุกเงื่อนไขเสมอ",
+                "หยุดประเมินเมื่อรู้คำตอบแล้ว",
+                "ทำงานช้ากว่าเดิม",
+                "ใช้วงเล็บเยอะขึ้น"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 43,
+            "question": "ถ้า x=10, y=20, ค่าของ `(x < 10 || x > 60 && y < 20)` คืออะไร",
+            "choices": [
+                "true",
+                "false",
+                "error",
+                "ไม่สามารถระบุได้"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 44,
+            "question": "การตรวจสอบค่าเลือกเมนู 0-9 ด้วย if ช่วยป้องกันอะไร",
+            "choices": [
+                "โปรแกรมรันเร็วขึ้น",
+                "ป้องกัน invalid input",
+                "ประหยัดหน่วยความจำ",
+                "ลดการใช้ตัวแปร"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 45,
+            "question": "การเขียนโค้ดให้รองรับ input ที่ผิดพลาดเป็นแนวคิดของอะไร",
+            "choices": [
+                "Error logging",
+                "Defensive programming",
+                "Performance tuning",
+                "Data hiding"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 46,
+            "question": "ใน multiway selection ถ้า day=5 จะได้ผลลัพธ์อะไร",
+            "choices": [
+                "Friday",
+                "Thursday",
+                "Saturday",
+                "Invalid day number."
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 47,
+            "question": "ใน multiway selection ถ้า day=8 จะได้ผลลัพธ์อะไร",
+            "choices": [
+                "Sunday",
+                "Invalid day number.",
+                "Monday",
+                "Saturday"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 48,
+            "question": "ข้อใดไม่ใช่ขั้นตอนของ U-SWACT",
+            "choices": [
+                "UNDERSTAND",
+                "SAMPLE INPUTS",
+                "WRITE TEST CASES",
+                "TRANSLATE TO CODE"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 49,
+            "question": "ในปัญหา Sorting 3 variables ทำไมต้องใช้การ swap",
+            "choices": [
+                "เพื่อประหยัดหน่วยความจำ",
+                "เพื่อเปลี่ยนค่าระหว่างตัวแปรให้ได้ลำดับที่ถูกต้อง",
+                "เพื่อคัดลอกค่าทั้งหมด",
+                "เพื่อคูณค่าทั้งหมด"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 50,
+            "question": "การเขียน `if (is_qualified) if (num_items < storage_size) num_items += 1; else ...` อาจทำให้เกิดปัญหาอะไร",
+            "choices": [
+                "Dangling else",
+                "Infinite loop",
+                "Segmentation fault",
+                "Integer overflow"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 51,
+            "question": "พิจารณาโค้ดต่อไปนี้:\n```c\nint n = 0;\nif (n == 0) printf(\"A\");\nif (n = 0) printf(\"B\");\nif (n == 1) printf(\"C\");\nif (n = 1) printf(\"D\");\n```\nผลลัพธ์ที่ได้คืออะไร",
+            "choices": [
+                "A",
+                "AB",
+                "AD",
+                "ABD"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 52,
+            "question": "พิจารณาโค้ด:\n```c\nfloat a = 1.0f;\nfloat b = a - 0.9f;\nif (b == 0.1f)\n    printf(\"OK\");\nelse\n    printf(\"NOT OK\");\n```\nผลลัพธ์จะเป็นอย่างไร",
+            "choices": [
+                "OK",
+                "NOT OK",
+                "Error",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 53,
+            "question": "ให้โค้ด:\n```c\nint choice = 10;\nif (choice < 0 || choice > 9) {\n    printf(\"Invalid\\n\");\n    return 0;\n}\nprintf(\"Valid\\n\");\n```\nผลลัพธ์คืออะไร",
+            "choices": [
+                "Invalid",
+                "Valid",
+                "Invalid\nValid",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 54,
+            "question": "โค้ดนี้จะแสดงผลอะไร:\n```c\nint x = 10, y = 20;\nint b = 1;\nint c = b && x < y;\nprintf(\"%d\\n\", c);\n```\n",
+            "choices": [
+                "0",
+                "1",
+                "10",
+                "20"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 55,
+            "question": "พิจารณาโค้ด:\n```c\nint day = 6;\nif (day == 1) printf(\"Mon\");\nelse if (day == 6) printf(\"Sat\");\nelse printf(\"Other\");\n```\nผลลัพธ์คืออะไร",
+            "choices": [
+                "Mon",
+                "Sat",
+                "Other",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 56,
+            "question": "โค้ดนี้ให้ผลอะไร:\n```c\nint a = 5, b = 2, c = 9, min;\nmin = a < b ? a : b;\nmin = c < min ? c : min;\nprintf(\"%d\", min);\n```\n",
+            "choices": [
+                "2",
+                "5",
+                "9",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 57,
+            "question": "จากโค้ด:\n```c\nint a = 3, b = 2, c = 1, min;\nif (a < b) min = a; else min = b;\nif (c < min) min = c;\nprintf(\"%d\", min);\n```\nจะได้ผลลัพธ์อะไร",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 58,
+            "question": "อ่านโค้ดนี้:\n```c\nint x = 10;\nif (x < 10 || x > 60 && x < 20)\n    printf(\"YES\");\nelse\n    printf(\"NO\");\n```\nผลคืออะไร",
+            "choices": [
+                "YES",
+                "NO",
+                "Error",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 59,
+            "question": "ให้โค้ด:\n```c\nint is_qualified = 1;\nint storage_size = 10;\nint num_items = 10;\nif (is_qualified) {\n    if (num_items >= storage_size)\n        printf(\"Full\");\n    else\n        num_items++;\n}\n```\nผลคืออะไร",
+            "choices": [
+                "Full",
+                "เพิ่ม num_items เป็น 11",
+                "ไม่มีการแสดงผล",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 60,
+            "question": "พิจารณาโค้ด:\n```c\nint a = 1, b = 2, temp;\ntemp = a;\na = b;\nb = temp;\nprintf(\"%d %d\", a, b);\n```\nผลลัพธ์คืออะไร",
+            "choices": [
+                "1 2",
+                "2 1",
+                "2 2",
+                "1 1"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 61,
+            "question": "ลูป while จะทำงานอย่างไร",
+            "choices": [
+                "ทำงานอย่างน้อยหนึ่งครั้งเสมอ",
+                "ตรวจสอบเงื่อนไขก่อนทำงานทุกครั้ง",
+                "ทำงานจนกว่าจะเจอ break เท่านั้น",
+                "ทำงานแบบไม่มีเงื่อนไข"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 62,
+            "question": "ลูป do … while มีลักษณะเด่นอย่างไร",
+            "choices": [
+                "ตรวจสอบเงื่อนไขก่อนทำงาน",
+                "ทำงานอย่างน้อยหนึ่งครั้งก่อนตรวจสอบเงื่อนไข",
+                "ใช้ได้เฉพาะกับจำนวนรอบคงที่",
+                "ต้องมี break เสมอ"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 63,
+            "question": "ตัวดำเนินการ ++ และ -- ไม่สามารถใช้กับชนิดข้อมูลใด",
+            "choices": [
+                "int",
+                "float",
+                "char",
+                "long"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 64,
+            "question": "ข้อใดคือลูปแบบ conditional loop ในภาษา C",
+            "choices": [
+                "while, do … while, for",
+                "for, foreach, repeat",
+                "loop, until, forever",
+                "repeat, until, break"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 65,
+            "question": "loop invariant หมายถึงอะไร",
+            "choices": [
+                "ตัวแปรที่เปลี่ยนค่าทุกครั้งในลูป",
+                "เงื่อนไขหรือคุณสมบัติที่ยังคงเป็นจริงตลอดการวนลูป",
+                "โค้ดที่รันเฉพาะครั้งแรกในลูป",
+                "การวนซ้ำแบบไม่มีที่สิ้นสุด"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 66,
+            "question": "ตัวแปร counter ในลูปมักใช้ชื่อใด",
+            "choices": [
+                "i, j",
+                "count, num",
+                "index, pos",
+                "ทั้งหมดถูก"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 67,
+            "question": "break ในลูปใช้ทำอะไร",
+            "choices": [
+                "หยุดการทำงานของลูปทันที",
+                "ข้ามคำสั่งในรอบปัจจุบัน",
+                "รีเซ็ตค่าตัวแปรในลูป",
+                "วนกลับไปเริ่มลูปใหม่"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 68,
+            "question": "continue ในลูปทำหน้าที่อย่างไร",
+            "choices": [
+                "หยุดการทำงานของลูปทันที",
+                "ข้ามคำสั่งที่เหลือในรอบนั้นและเริ่มรอบถัดไป",
+                "ทำให้ลูปเป็น infinite loop",
+                "รีเซ็ตค่าตัวแปรในลูป"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 69,
+            "question": "การใช้ while(1) หมายถึงอะไร",
+            "choices": [
+                "เงื่อนไขเป็นจริงเสมอ ทำให้เกิดลูปไม่มีที่สิ้นสุด",
+                "เงื่อนไขเป็นเท็จเสมอ",
+                "ลูปจะทำงานเพียงครั้งเดียว",
+                "ใช้ได้เฉพาะกับ do … while"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 70,
+            "question": "การใช้ while กับการตรวจสอบค่าที่ผู้ใช้กรอกจนถูกต้องเป็นตัวอย่างของแนวคิดใด",
+            "choices": [
+                "Loop invariant",
+                "Defensive programming",
+                "Short-circuit evaluation",
+                "Recursion"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 71,
+            "question": "ถ้าต้องการทำงานซ้ำ N ครั้ง ควรใช้รูปแบบลูปใด",
+            "choices": [
+                "Repeat N Times pattern",
+                "Loop invariant pattern",
+                "Input validation pattern",
+                "Break-continue pattern"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 72,
+            "question": "ข้อใดไม่ใช่เงื่อนไขที่เหมาะสมสำหรับ do … while",
+            "choices": [
+                "ต้องการให้รันอย่างน้อยหนึ่งครั้ง",
+                "ต้องการอ่านค่าก่อนตรวจสอบเงื่อนไข",
+                "เงื่อนไขรู้ค่าตั้งแต่แรก",
+                "ใช้สำหรับ input validation"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 73,
+            "question": "การบวกค่าตั้งแต่ 1 ถึง N เพื่อหาผลรวมเป็นตัวอย่างของการใช้",
+            "choices": [
+                "break",
+                "loop invariant",
+                "continue",
+                "goto"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 74,
+            "question": "โค้ดที่ใช้ n-- ในเงื่อนไข while(n-- > 0) จะทำงานต่างจาก n -= 1 อย่างไร",
+            "choices": [
+                "ตรวจสอบและลดค่าพร้อมกัน",
+                "ตรวจสอบอย่างเดียว",
+                "ลดค่าอย่างเดียว",
+                "ไม่มีความแตกต่าง"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 75,
+            "question": "ถ้าใช้ continue ภายในลูป while จะเกิดอะไรขึ้น",
+            "choices": [
+                "ลูปหยุดทำงานทันที",
+                "ข้ามไปตรวจสอบเงื่อนไขรอบถัดไปทันที",
+                "รีเซ็ตค่าตัวแปรในลูป",
+                "วนซ้ำกลับไปเริ่มโปรแกรม"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 76,
+            "question": "ผลลัพธ์จากโค้ดนี้คืออะไร:\n```c\nint n = 3;\nwhile(n > 0) {\n  printf(\"%d \", n);\n  n--;\n}\n```",
+            "choices": [
+                "3 2 1",
+                "1 2 3",
+                "2 1 0",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 77,
+            "question": "โค้ดนี้ให้ผลอะไร:\n```c\nint i = 1;\nwhile(i <= 3) {\n  printf(\"%d \", i++);\n}\n```",
+            "choices": [
+                "1 2 3",
+                "0 1 2",
+                "2 3 4",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 78,
+            "question": "ผลลัพธ์จากโค้ด:\n```c\nint n = 3;\ndo {\n  printf(\"%d \", n);\n  n--;\n} while(n > 0);\n```",
+            "choices": [
+                "3 2 1",
+                "1 2 3",
+                "2 1",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 79,
+            "question": "อ่านโค้ดนี้และบอกผลลัพธ์:\n```c\nint sum = 0, i = 1;\nwhile(i <= 4) {\n  sum += i;\n  i++;\n}\nprintf(\"%d\", sum);\n```",
+            "choices": [
+                "4",
+                "6",
+                "10",
+                "16"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 80,
+            "question": "โค้ดนี้จะแสดงอะไร:\n```c\nint a = 1, b = 2, c;\nc = a++ + b++;\nprintf(\"%d %d %d\", a, b, c);\n```",
+            "choices": [
+                "1 2 3",
+                "2 3 3",
+                "2 3 4",
+                "1 3 3"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 81,
+            "question": "ให้โค้ด:\n```c\nint target = 5, n = 1, sum = 0;\nwhile(sum + n < target) {\n  sum += n;\n  n++;\n}\nprintf(\"%d\", n);\n```",
+            "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 82,
+            "question": "โค้ดนี้ทำอะไร:\n```c\nint n = 0, sum = 0;\nwhile(1) {\n  n++;\n  if(n % 3 == 0) continue;\n  if(sum + n >= 10) break;\n  sum += n;\n}\nprintf(\"%d\", sum);\n```",
+            "choices": [
+                "รวมเลข 1 ถึง 10",
+                "รวมเลขที่ไม่หาร 3 ลงตัวจนเกือบ 10",
+                "รวมเลขคี่จนถึง 10",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 83,
+            "question": "ผลจากโค้ดนี้คือ:\n```c\nint guess;\ndo {\n  guess = 5;\n} while(guess < 1 || guess > 100);\nprintf(\"%d\", guess);\n```",
+            "choices": [
+                "ไม่มีการแสดงผล",
+                "5",
+                "0",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 84,
+            "question": "อ่านโค้ดนี้:\n```c\nint n = 0;\nwhile(n < 3) {\n  printf(\"%d \", n);\n  n++;\n  if(n == 2) break;\n}\n```",
+            "choices": [
+                "0 1 2",
+                "0 1",
+                "0",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 85,
+            "question": "โค้ดนี้ให้ผลอะไร:\n```c\nint i = 0;\nwhile(i++ < 3) {\n  printf(\"%d \", i);\n}\n```",
+            "choices": [
+                "0 1 2",
+                "1 2 3",
+                "1 2 3 4",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 86,
+            "question": "ผลลัพธ์จากโค้ดนี้:\n```c\nint n = 5;\nwhile(--n > 0) {\n  printf(\"%d \", n);\n}\n```",
+            "choices": [
+                "5 4 3 2 1",
+                "4 3 2 1",
+                "4 3 2",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 87,
+            "question": "โค้ดนี้จะทำงานกี่ครั้ง:\n```c\nint i = 1;\ndo {\n  i++;\n} while(i < 5);\n```",
+            "choices": [
+                "4",
+                "5",
+                "ไม่มีการทำงาน",
+                "1"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 88,
+            "question": "อ่านโค้ดนี้:\n```c\nint i = 1, fact = 1;\nwhile(i <= 4) {\n  fact *= i;\n  i++;\n}\nprintf(\"%d\", fact);\n```",
+            "choices": [
+                "4",
+                "10",
+                "24",
+                "120"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 89,
+            "question": "ผลลัพธ์จากโค้ด:\n```c\nint i = 0;\nwhile(i < 3) {\n  printf(\"Hi \");\n  i++;\n}\n```",
+            "choices": [
+                "Hi Hi Hi",
+                "Hi Hi",
+                "Hi",
+                "ไม่มีการแสดงผล"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 90,
+            "question": "โค้ดนี้แสดงอะไร:\n```c\nint i = 0, sum = 0;\nwhile(i < 5) {\n  sum += ++i;\n}\nprintf(\"%d\", sum);\n```",
+            "choices": [
+                "10",
+                "15",
+                "5",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 91,
+            "question": "ข้อใดเป็นการประกาศอาร์เรย์จำนวนเต็มขนาด 10 ช่อง",
+            "choices": [
+                "int arr(10);",
+                "int arr[10];",
+                "array int arr[10];",
+                "arr int[10];"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 92,
+            "question": "ดัชนี (index) ของอาร์เรย์ในภาษา C เริ่มจากอะไร",
+            "choices": [
+                "0",
+                "1",
+                "-1",
+                "กำหนดเองได้"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 93,
+            "question": "การประกาศ `double ys[] = {1.0, 2.5, 4.5};` จะได้อาร์เรย์ขนาดเท่าใด",
+            "choices": [
+                "3",
+                "4",
+                "ไม่สามารถทราบได้",
+                "ขึ้นกับค่าที่กำหนด"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 94,
+            "question": "การอ่านข้อมูลเข้าอาร์เรย์ด้วย scanf ต้องใช้สัญลักษณ์ใดหน้า element",
+            "choices": [
+                "ไม่มีสัญลักษณ์",
+                "&",
+                "*",
+                "%"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 95,
+            "question": "ตัวแปร pointer คืออะไร",
+            "choices": [
+                "ตัวแปรเก็บค่าตัวเลขเท่านั้น",
+                "ตัวแปรเก็บที่อยู่ในหน่วยความจำ",
+                "ตัวแปรเก็บตัวอักษรเท่านั้น",
+                "ตัวแปรเก็บชนิดข้อมูลหลายชนิด"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 96,
+            "question": "เครื่องหมาย `*` ในการใช้งาน pointer หมายถึงอะไร",
+            "choices": [
+                "การคูณ",
+                "การประกาศตัวแปร pointer",
+                "การ dereference เพื่อเข้าถึงค่าที่ชี้",
+                "การบวกค่าของ pointer"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 97,
+            "question": "ค่า address ของอาร์เรย์สามารถได้จากอะไร",
+            "choices": [
+                "ชื่ออาร์เรย์โดยตรง",
+                "&อาร์เรย์[0]",
+                "ทั้ง A และ B",
+                "ต้องใช้ฟังก์ชัน malloc เท่านั้น"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 98,
+            "question": "C string มีลักษณะเป็นอย่างไร",
+            "choices": [
+                "อาร์เรย์ของ int",
+                "อาร์เรย์ของ char ที่ลงท้ายด้วย '\\0'",
+                "อาร์เรย์ของ float",
+                "Pointer ไปยังตัวเลข"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 99,
+            "question": "ถ้าใช้ scanf(\"%s\", str) กับการป้อนค่า \"hello world\" จะได้ค่าอะไรใน str",
+            "choices": [
+                "hello world",
+                "hello",
+                "world",
+                "error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 100,
+            "question": "การป้องกัน buffer overflow เมื่ออ่าน string ด้วย scanf ควรทำอย่างไร",
+            "choices": [
+                "ใช้ %s ปกติ",
+                "ใช้ width specifier เช่น %19s",
+                "ใช้ gets()",
+                "ไม่สามารถป้องกันได้"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 101,
+            "question": "strlen(s) จะคืนค่าอะไร",
+            "choices": [
+                "จำนวนตัวอักษรไม่รวม '\\0'",
+                "จำนวนตัวอักษรรวม '\\0'",
+                "ขนาดหน่วยความจำของ s",
+                "ที่อยู่ของ s"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 102,
+            "question": "ฟังก์ชัน fgets() ใช้อ่าน string โดยมีข้อดีอะไร",
+            "choices": [
+                "อ่านได้จนเจอช่องว่าง",
+                "อ่านทั้งบรรทัดรวมช่องว่าง",
+                "อ่านตัวอักษรแรกเท่านั้น",
+                "อ่านเฉพาะตัวเลข"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 103,
+            "question": "การวนลูป `for (int i=0; i<strlen(s); i++)` อาจไม่เหมาะเพราะเหตุใด",
+            "choices": [
+                "strlen ใช้เวลามาก",
+                "strlen คืนค่าผิดพลาด",
+                "i อาจเกินขอบเขต",
+                "ไม่สามารถใช้กับ pointer"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 104,
+            "question": "เครื่องหมาย %p ใช้สำหรับอะไร",
+            "choices": [
+                "พิมพ์ค่าตัวเลขจำนวนเต็ม",
+                "พิมพ์ค่าตัวอักษร",
+                "พิมพ์ค่าตัวชี้ (pointer address)",
+                "พิมพ์ค่าทศนิยม"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 105,
+            "question": "การใช้ &var ใน scanf หมายถึงอะไร",
+            "choices": [
+                "ส่งค่าของตัวแปรไป",
+                "ส่งที่อยู่ของตัวแปรไป",
+                "ส่งชนิดข้อมูลของตัวแปรไป",
+                "ส่งสำเนาของตัวแปรไป"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 106,
+            "question": "ผลจากโค้ดนี้คืออะไร:\n```c\nint arr[] = {3,4,2,0,1};\nint sum=0;\nfor(int i=0;i<5;i++) sum+=arr[i];\nprintf(\"%d\", sum);\n```",
+            "choices": [
+                "10",
+                "9",
+                "15",
+                "5"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 107,
+            "question": "ผลจากโค้ดนี้:\n```c\nint arr[3];\narr[0] = 1;\narr[1] = arr[0] + 2;\narr[arr[0] + 1] = arr[0] + arr[1];\nprintf(\"%d\", arr[2]);\n```",
+            "choices": [
+                "1",
+                "3",
+                "4",
+                "error"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 108,
+            "question": "โค้ดนี้แสดงผลอะไร:\n```c\nint scores[5] = {5,7,2,9,6};\nint max = scores[0];\nfor(int i=1;i<5;i++)\n if(scores[i] > max) max = scores[i];\nprintf(\"%d\", max);\n```",
+            "choices": [
+                "5",
+                "7",
+                "9",
+                "6"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 109,
+            "question": "ผลจากโค้ดนี้:\n```c\nint elems[] = {6,1,3,0,9,4,2};\nint pos=-1, target=9;\nfor(int i=0;i<7;i++){\n if(elems[i]==target){pos=i;break;}}\nprintf(\"%d\", pos);\n```",
+            "choices": [
+                "4",
+                "5",
+                "9",
+                "-1"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 110,
+            "question": "ผลจากโค้ดนี้:\n```c\nint exp=5;\nint *ptr = &exp;\n*ptr = *ptr + 3;\nprintf(\"%d\", exp);\n```",
+            "choices": [
+                "3",
+                "5",
+                "8",
+                "error"
+            ],
+            "answer": "C"
+        },
+        {
+            "no": 111,
+            "question": "ผลจากโค้ดนี้:\n```c\nint arr[] = {3,4,2};\nint *p = arr;\nprintf(\"%d %d\", *p, *(p+2));\n```",
+            "choices": [
+                "3 2",
+                "3 4",
+                "4 2",
+                "error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 112,
+            "question": "ผลจากโค้ดนี้:\n```c\nchar name[10] = \"Beck\";\nprintf(\"%s\", name);\n```",
+            "choices": [
+                "Beck",
+                "Bec",
+                "Beck\\0",
+                "error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 113,
+            "question": "โค้ดนี้ให้ผลอะไร:\n```c\nchar str[20] = \"Hello!\";\nint count=0;\nwhile(str[count] != '\\0') count++;\nprintf(\"%d\", count);\n```",
+            "choices": [
+                "5",
+                "6",
+                "7",
+                "error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 114,
+            "question": "ผลจากโค้ดนี้:\n```c\nchar s[20] = \"Hi Bob\";\nprintf(\"%lu\", strlen(s));\n```",
+            "choices": [
+                "5",
+                "6",
+                "7",
+                "error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 115,
+            "question": "โค้ดนี้แสดงอะไร:\n```c\nchar str[50] = \"apple\";\nchar src='p', dest='x';\nfor(int i=0; str[i] != '\\0'; i++){\n if(str[i] == src) str[i] = dest;}\nprintf(\"%s\", str);\n```",
+            "choices": [
+                "axxle",
+                "apple",
+                "axxpe",
+                "error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 116,
+            "question": "ผลจากโค้ดนี้:\n```c\nchar s[10];\nscanf(\"%9s\", s);\nprintf(\"%s\", s);\n``` เมื่อผู้ใช้พิมพ์ `cat`",
+            "choices": [
+                "cat",
+                "c",
+                "ca",
+                "error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 117,
+            "question": "ผลจากโค้ดนี้:\n```c\nint arr[4] = {1,2,3,4};\nint *p = arr;\np++;\nprintf(\"%d\", *p);\n```",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 118,
+            "question": "โค้ดนี้แสดงอะไร:\n```c\nchar text[10] = \"Hello\";\ntext[5] = '!';\ntext[6] = '\\0';\nprintf(\"%s\", text);\n```",
+            "choices": [
+                "Hello",
+                "Hello!",
+                "Hello\\0",
+                "error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 119,
+            "question": "ผลจากโค้ดนี้:\n```c\nint nums[3] = {10,20,30};\nprintf(\"%p\", nums);\n```",
+            "choices": [
+                "ค่าตัวเลขของ nums[0]",
+                "ที่อยู่ของ nums",
+                "ที่อยู่ของ nums[0]",
+                "ทั้ง B และ C"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 120,
+            "question": "ผลจากโค้ดนี้:\n```c\nint arr[3] = {1,2,3};\nfor(int i=0;i<3;i++)\n printf(\"%d\", *(arr+i));\n```",
+            "choices": [
+                "123",
+                "321",
+                "132",
+                "error"
+            ],
+            "answer": "A"
+        }
+    ]
+}

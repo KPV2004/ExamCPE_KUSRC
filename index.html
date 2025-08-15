@@ -30,6 +30,7 @@
     details summary{cursor:pointer}
     code.block{white-space:pre-wrap;display:block;background:#0e1016;border:1px solid #232636;border-radius:12px;padding:12px}
   </style>
+
 </head>
 <body>
   <div class="wrap">
@@ -75,7 +76,7 @@
   // ===== A) รายชื่อไฟล์ข้อสอบ =====
   // แนะนำให้มีไฟล์ exam/manifest.json เป็นลิสต์ไฟล์ เช่น ["social_politics_midterm.json", ...]
   // ถ้าไม่มี manifest จะ fallback เป็นลิสต์ด้านล่างนี้
-  const FALLBACK_FILES = ["social_politics_midterm.json","laws_and_ethics_midterm.json"];
+  const FALLBACK_FILES = ["fundamental_programmingI_midterm.json","social_politics_midterm.json","laws_and_ethics_midterm.json"];
   const EXAM_BASE = "exam/";
 
   // ===== B) เตรียม DOM =====
@@ -203,44 +204,97 @@
   }
 
   // ===== G) เรนเดอร์ข้อสอบ =====
-  function render(){
-    $quiz.innerHTML = '';
-    const info = document.createElement('div');
-    info.className='card';
+//   function render(){
+//     $quiz.innerHTML = '';
+//     const info = document.createElement('div');
+//     info.className='card';
 
-    const missing = (DATA.meta?.missing_numbers ?? []);
-    info.innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end">
-        <div>
-          <div class="muted">จำนวนข้อที่ใช้ทดสอบ: <b>${current.length}</b> ข้อ
-            ${missing.length ? `<span class="pill" title="หมายเลขข้อที่หาย: ${missing.join(', ')}">(หาย: ${missing.join(', ')})</span>` : ''}
-          </div>
-          <div class="muted">ตอบแล้ว: <b id="answeredCount">0</b>/<b>${current.length}</b></div>
-        </div>
-        <div class="row">
-          <button onclick="toggleShuffle()">สลับลำดับ</button>
-          <button onclick="showKey()">ดูเฉลยทุกข้อ</button>
-        </div>
-      </div>`;
-    $quiz.appendChild(info);
+//     const missing = (DATA.meta?.missing_numbers ?? []);
+//     info.innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end">
+//         <div>
+//           <div class="muted">จำนวนข้อที่ใช้ทดสอบ: <b>${current.length}</b> ข้อ
+//             ${missing.length ? `<span class="pill" title="หมายเลขข้อที่หาย: ${missing.join(', ')}">(หาย: ${missing.join(', ')})</span>` : ''}
+//           </div>
+//           <div class="muted">ตอบแล้ว: <b id="answeredCount">0</b>/<b>${current.length}</b></div>
+//         </div>
+//         <div class="row">
+//           <button onclick="toggleShuffle()">สลับลำดับ</button>
+//           <button onclick="showKey()">ดูเฉลยทุกข้อ</button>
+//         </div>
+//       </div>`;
+//     $quiz.appendChild(info);
 
-    current.forEach((q)=>{
-      const card = document.createElement('div');
-      card.className = 'q';
-      card.innerHTML = `<h3>${q.no}. ${q.stem}</h3>
-        <div class="opts">${q.options.map((t,ix)=>{
-          const id = `q${q.no}_${ix}`;
-          return `<label class="opt"><input type="radio" name="q${q.no}" value="${ix}" id="${id}" /> ${'ABCD'[ix]}) ${t}</label>`;
-        }).join('')}</div>`;
-      $quiz.appendChild(card);
-      card.addEventListener('change', (e)=>{
-        const sel = parseInt(e.target.value,10);
-        answers.set(q.no, sel);
-        updateProgress();
-      });
+//     current.forEach((q)=>{
+//       const card = document.createElement('div');
+//       card.className = 'q';
+//       card.innerHTML = `<h3>${q.no}. ${q.stem}</h3>
+//         <div class="opts">${q.options.map((t,ix)=>{
+//           const id = `q${q.no}_${ix}`;
+//           return `<label class="opt"><input type="radio" name="q${q.no}" value="${ix}" id="${id}" /> ${'ABCD'[ix]}) ${t}</label>`;
+//         }).join('')}</div>`;
+//       $quiz.appendChild(card);
+//       card.addEventListener('change', (e)=>{
+//         const sel = parseInt(e.target.value,10);
+//         answers.set(q.no, sel);
+//         updateProgress();
+//       });
+//     });
+//     $panelSubmit.style.display = 'block';
+//     updateProgress();
+//   }
+function render(){
+  $quiz.innerHTML = '';
+  const info = document.createElement('div');
+  info.className='card';
+
+  const missing = (DATA.meta?.missing_numbers ?? []);
+  info.innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end">
+      <div>
+        <div class="muted">จำนวนข้อที่ใช้ทดสอบ: <b>${current.length}</b> ข้อ
+          ${missing.length ? `<span class="pill" title="หมายเลขข้อที่หาย: ${missing.join(', ')}">(หาย: ${missing.join(', ')})</span>` : ''}
+        </div>
+        <div class="muted">ตอบแล้ว: <b id="answeredCount">0</b>/<b>${current.length}</b></div>
+      </div>
+      <div class="row">
+        <button onclick="toggleShuffle()">สลับลำดับ</button>
+        <button onclick="showKey()">ดูเฉลยทุกข้อ</button>
+      </div>
+    </div>`;
+  $quiz.appendChild(info);
+
+  current.forEach((q)=>{
+    const card = document.createElement('div');
+    card.className = 'q';
+
+    // ✅ ตรวจจับ ```lang ... ``` แล้วแปลงเป็น block code
+    let stemHtml = q.stem
+      .replace(/```(\w+)?\n([\s\S]*?)```/g, (m, lang, code) => {
+        return `<pre><code class="language-${lang || ''}">${escapeHtml(code)}</code></pre>`;
+      })
+      .replace(/\n/g, "<br>");
+
+    card.innerHTML = `<h3>${q.no}. ${stemHtml}</h3>
+      <div class="opts">${q.options.map((t,ix)=>{
+        const id = `q${q.no}_${ix}`;
+        return `<label class="opt"><input type="radio" name="q${q.no}" value="${ix}" id="${id}" /> ${'ABCD'[ix]}) ${t}</label>`;
+      }).join('')}</div>`;
+    $quiz.appendChild(card);
+    card.addEventListener('change', (e)=>{
+      const sel = parseInt(e.target.value,10);
+      answers.set(q.no, sel);
+      updateProgress();
     });
-    $panelSubmit.style.display = 'block';
-    updateProgress();
-  }
+  });
+  $panelSubmit.style.display = 'block';
+  updateProgress();
+}
+
+function escapeHtml(str){
+  return str.replace(/[&<>'"]/g, t => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[t]));
+}
+
 
   // ===== H) เครื่องมืออื่น ๆ =====
   function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
