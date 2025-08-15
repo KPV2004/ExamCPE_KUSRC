@@ -1,10 +1,8 @@
 {
   "meta": {
     "source": "social_politics_exam.pdf",
-    "count": 89,
-    "missing_numbers": [
-      45
-    ]
+    "count": 100,
+    "missing_numbers": []
   },
   "questions": [
     {
