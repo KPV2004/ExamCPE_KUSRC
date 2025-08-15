@@ -1323,6 +1323,325 @@
                 "error"
             ],
             "answer": "A"
+        },
+        {
+            "no": 121,
+            "question": "ข้อใดคือข้อดีของการใช้ฟังก์ชัน",
+            "choices": [
+                "ลดการทำงานซ้ำ",
+                "ทำให้โค้ดอ่านง่ายขึ้น",
+                "บำรุงรักษาได้ง่าย",
+                "ทั้งหมดถูก"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 122,
+            "question": "Parameter คืออะไร",
+            "choices": [
+                "ค่าที่ฟังก์ชันส่งกลับ",
+                "ค่าที่ส่งเข้าไปในฟังก์ชัน",
+                "ตัวแปรที่ประกาศภายในฟังก์ชัน",
+                "ชื่อของฟังก์ชัน"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 123,
+            "question": "การส่งค่าพารามิเตอร์ในภาษา C เป็นแบบใดโดยปกติ",
+            "choices": [
+                "Pass by reference",
+                "Pass by copy (value semantics)",
+                "Pass by address",
+                "Pass by pointer เท่านั้น"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 124,
+            "question": "หากต้องการให้ฟังก์ชันแก้ไขค่าของตัวแปรเดิม ต้องส่งค่าอย่างไร",
+            "choices": [
+                "ส่งค่าปกติ",
+                "ส่งค่าผ่าน pointer",
+                "ใช้ตัวแปร global",
+                "ใช้ return value"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 125,
+            "question": "ฟังก์ชันที่ไม่คืนค่าควรใช้ return type อะไร",
+            "choices": [
+                "void",
+                "int",
+                "char",
+                "none"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 126,
+            "question": "ในภาษา C หากฟังก์ชันถูกเรียกก่อนประกาศจะเกิดอะไรขึ้น",
+            "choices": [
+                "ทำงานได้ปกติ",
+                "เกิด compile error",
+                "ค่าผลลัพธ์ผิดพลาด",
+                "เกิด runtime error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 127,
+            "question": "Static local variable มีคุณสมบัติพิเศษอย่างไร",
+            "choices": [
+                "ถูกรีเซ็ตค่าเมื่อฟังก์ชันเรียกใหม่",
+                "คงค่าระหว่างการเรียกฟังก์ชัน",
+                "เป็น global variable",
+                "ไม่สามารถประกาศในฟังก์ชันได้"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 128,
+            "question": "ใน recursive function ส่วนที่ทำให้การทำงานสิ้นสุดคืออะไร",
+            "choices": [
+                "Base case",
+                "Recursive step",
+                "Return value",
+                "Parameter"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 129,
+            "question": "ข้อใดคือข้อเสียของ recursion",
+            "choices": [
+                "อ่านโค้ดยาก",
+                "ใช้หน่วยความจำมากกว่า iteration",
+                "อาจเกิด stack overflow",
+                "ทั้งหมดถูก"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 121,
+            "question": "ข้อใดคือข้อดีของการใช้ฟังก์ชัน",
+            "choices": [
+                "ลดการทำงานซ้ำ",
+                "ทำให้โค้ดอ่านง่ายขึ้น",
+                "บำรุงรักษาได้ง่าย",
+                "ทั้งหมดถูก"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 122,
+            "question": "Parameter คืออะไร",
+            "choices": [
+                "ค่าที่ฟังก์ชันส่งกลับ",
+                "ค่าที่ส่งเข้าไปในฟังก์ชัน",
+                "ตัวแปรที่ประกาศภายในฟังก์ชัน",
+                "ชื่อของฟังก์ชัน"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 123,
+            "question": "การส่งค่าพารามิเตอร์ในภาษา C เป็นแบบใดโดยปกติ",
+            "choices": [
+                "Pass by reference",
+                "Pass by copy (value semantics)",
+                "Pass by address",
+                "Pass by pointer เท่านั้น"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 124,
+            "question": "หากต้องการให้ฟังก์ชันแก้ไขค่าของตัวแปรเดิม ต้องส่งค่าอย่างไร",
+            "choices": [
+                "ส่งค่าปกติ",
+                "ส่งค่าผ่าน pointer",
+                "ใช้ตัวแปร global",
+                "ใช้ return value"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 125,
+            "question": "ฟังก์ชันที่ไม่คืนค่าควรใช้ return type อะไร",
+            "choices": [
+                "void",
+                "int",
+                "char",
+                "none"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 126,
+            "question": "ในภาษา C หากฟังก์ชันถูกเรียกก่อนประกาศจะเกิดอะไรขึ้น",
+            "choices": [
+                "ทำงานได้ปกติ",
+                "เกิด compile error",
+                "ค่าผลลัพธ์ผิดพลาด",
+                "เกิด runtime error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 127,
+            "question": "Static local variable มีคุณสมบัติพิเศษอย่างไร",
+            "choices": [
+                "ถูกรีเซ็ตค่าเมื่อฟังก์ชันเรียกใหม่",
+                "คงค่าระหว่างการเรียกฟังก์ชัน",
+                "เป็น global variable",
+                "ไม่สามารถประกาศในฟังก์ชันได้"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 128,
+            "question": "ใน recursive function ส่วนที่ทำให้การทำงานสิ้นสุดคืออะไร",
+            "choices": [
+                "Base case",
+                "Recursive step",
+                "Return value",
+                "Parameter"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 129,
+            "question": "ข้อใดคือข้อเสียของ recursion",
+            "choices": [
+                "อ่านโค้ดยาก",
+                "ใช้หน่วยความจำมากกว่า iteration",
+                "อาจเกิด stack overflow",
+                "ทั้งหมดถูก"
+            ],
+            "answer": "D"
+        },
+        {
+            "no": 130,
+            "question": "ฟังก์ชัน count() แบบ post-order จะพิมพ์ค่าเมื่อใด",
+            "choices": [
+                "ก่อนเรียกตัวเอง",
+                "หลังเรียกตัวเอง",
+                "ทั้งก่อนและหลัง",
+                "ไม่พิมพ์ค่าเลย"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 131,
+            "question": "ผลลัพธ์จากโค้ดนี้คืออะไร:\n```c\nvoid swap(int a, int b) {\n    int t = a;\n    a = b;\n    b = t;\n}\n\nint main() {\n    int x = 1, y = 2;\n    swap(x, y);\n    printf(\"%d %d\", x, y);\n}\n```",
+            "choices": [
+                "1 2",
+                "2 1",
+                "0 0",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 132,
+            "question": "ผลจากโค้ดนี้:\n```c\nvoid swap(int *a, int *b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint main() {\n    int x = 1, y = 2;\n    swap(&x, &y);\n    printf(\"%d %d\", x, y);\n}\n```",
+            "choices": [
+                "1 2",
+                "2 1",
+                "0 0",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 133,
+            "question": "ผลลัพธ์จากโค้ดนี้:\n```c\nint count = 0;\nint inc1() {\n    return ++count;\n}\n\nint main() {\n    printf(\"%d %d\", inc1(), inc1());\n}\n```",
+            "choices": [
+                "1 1",
+                "1 2",
+                "2 2",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 134,
+            "question": "ผลลัพธ์จากโค้ดนี้:\n```c\nint inc2() {\n    int count = 0;\n    return ++count;\n}\n\nint main() {\n    printf(\"%d %d\", inc2(), inc2());\n}\n```",
+            "choices": [
+                "1 1",
+                "1 2",
+                "2 2",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 135,
+            "question": "ผลจากโค้ดนี้:\n```c\nstatic int count = 0;\nint inc3() {\n    static int c = 0;\n    return ++c;\n}\n\nint main() {\n    printf(\"%d %d\", inc3(), inc3());\n}\n```",
+            "choices": [
+                "1 1",
+                "1 2",
+                "2 2",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 136,
+            "question": "ผลจากโค้ดนี้:\n```c\nint fact_r(int n) {\n    if (n == 0)\n        return 1;\n    else\n        return n * fact_r(n - 1);\n}\n\nint main() {\n    printf(\"%d\", fact_r(4));\n}\n```",
+            "choices": [
+                "24",
+                "120",
+                "4",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 137,
+            "question": "ผลจากโค้ดนี้:\n```c\nvoid add_arr(int arr[], int size, int v) {\n    for (int i = 0; i < size; i++)\n        arr[i] += v;\n}\n\nint main() {\n    int a[3] = {1, 2, 3};\n    add_arr(a, 3, 2);\n    printf(\"%d %d %d\", a[0], a[1], a[2]);\n}\n```",
+            "choices": [
+                "3 4 5",
+                "1 2 3",
+                "2 3 4",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 138,
+            "question": "ผลจากโค้ดนี้:\n```c\nint my_strlen(char s[]) {\n    int c = 0;\n    while (s[c] != '\\0')\n        c++;\n    return c;\n}\n\nint main() {\n    char t[] = \"Hi\";\n    printf(\"%d\", my_strlen(t));\n}\n```",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "Error"
+            ],
+            "answer": "B"
+        },
+        {
+            "no": 139,
+            "question": "ผลลัพธ์จากโค้ดนี้:\n```c\ndouble common(double a, double b) {\n    return a + b;\n}\n\ndouble triple(double a) {\n    return common(a, common(a, a));\n}\n\nint main() {\n    printf(\"%.1f\", triple(2.0));\n}\n```",
+            "choices": [
+                "6.0",
+                "4.0",
+                "8.0",
+                "Error"
+            ],
+            "answer": "A"
+        },
+        {
+            "no": 140,
+            "question": "ผลจากโค้ดนี้:\n```c\nvoid count(int n) {\n    if (n <= 0)\n        return;\n    else {\n        printf(\"%d \", n);\n        count(n - 1);\n    }\n}\n\nint main() {\n    count(3);\n}\n```",
+            "choices": [
+                "3 2 1",
+                "1 2 3",
+                "3 1 2",
+                "Error"
+            ],
+            "answer": "A"
         }
     ]
 }
