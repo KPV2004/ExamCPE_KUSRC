@@ -166,7 +166,7 @@
     $title.innerHTML = `ชุดข้อสอบ ${title} `;
     const $num = document.getElementById('num');
     if ($num) {
-      $num.max = String(DATA.meta?.count || ITEMS.length);
+      $num.max = String(ITEMS.length);
       if (parseInt($num.value||'0',10) > parseInt($num.max,10)) $num.value = $num.max;
     }
 
@@ -174,7 +174,7 @@
     if ($preview) {
       const meta = [
         `title: ${title}`,
-        `count: ${DATA.meta?.count ?? ITEMS.length}`,
+        `count: ${ITEMS.length}`,
         `missing_numbers: ${JSON.stringify(DATA.meta?.missing_numbers ?? [])}`
       ].join('\n');
       $preview.textContent = meta;
