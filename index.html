@@ -34,7 +34,7 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>ชุดข้อสอบ Social & Politics <span class="pill">ดึงจากไฟล์ที่ให้</span></h1>
+      <h1>ชุดข้อสอบ Social & Politics </h1>
       <p class="muted">ทำข้อสอบตัวเต็ม / สุ่มบางข้อ / ตรวจเฉลย และดาวน์โหลดผลลัพธ์ได้</p>
       <div class="row" style="margin:12px 0 6px">
         <button id="btnStart" class="primary">เริ่มทำข้อสอบตัวเต็ม</button>
@@ -64,11 +64,11 @@
 
     <div id="report"></div>
 
-    <details class="card" style="margin-top:16px">
+    <!-- <details class="card" style="margin-top:16px">
       <summary>แหล่งข้อมูล (RAW) & วิธีแปลงจากไฟล์</summary>
       <p class="muted">ด้านล่างคือข้อความจากไฟล์ PDF ที่คุณให้มา (ตัดแปะ) และสคริปต์จะแปลงเป็นโครงสร้างคำถามอัตโนมัติ – ถ้าต้องการแก้ไขข้อความ ตรงนี้คือจุดเดียวที่ต้องแก้</p>
       <code class="block" id="preview"></code>
-    </details>
+    </details> -->
   </div>
 <script>
 (() => {
@@ -163,7 +163,7 @@
 
     // แสดงชื่อจาก meta.title และปรับ max สุ่มตาม count
     const title = DATA.meta?.title || $examSelect.value.replace(/\.json$/,'');
-    $title.innerHTML = `ชุดข้อสอบ ${title} <span class="pill">ดึงจาก ${EXAM_BASE}${filename}</span>`;
+    $title.innerHTML = `ชุดข้อสอบ ${title} `;
     const $num = document.getElementById('num');
     if ($num) {
       $num.max = String(DATA.meta?.count || ITEMS.length);
