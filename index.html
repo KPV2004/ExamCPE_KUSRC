@@ -71,68 +71,144 @@
     </details>
   </div>
 <script>
-(async () => {
-  // ===== 0) โหลด JSON =====
-  const res = await fetch('social_politics_exam.json');
-  const data = await res.json();
+(() => {
+  // ===== A) รายชื่อไฟล์ข้อสอบ =====
+  // แนะนำให้มีไฟล์ exam/manifest.json เป็นลิสต์ไฟล์ เช่น ["social_politics_midterm.json", ...]
+  // ถ้าไม่มี manifest จะ fallback เป็นลิสต์ด้านล่างนี้
+  const FALLBACK_FILES = ["social_politics_midterm.json"];
+  const EXAM_BASE = "exam/";
 
-  // แปลงเป็นโครงสร้างเดียวกับระบบเดิม
-  const ITEMS = data.questions.map(q => ({
-    no: q.no,
-    stem: q.question,
-    options: q.choices,
-    answerIndex: ({A:0,B:1,C:2,D:3})[q.answer] ?? null
-  })).sort((a,b)=>a.no-b.no);
-
-  // ===== 1) อ้างอิง DOM =====
+  // ===== B) เตรียม DOM =====
   const $quiz = document.getElementById('quiz');
   const $progress = document.getElementById('progress');
   const $stat = document.getElementById('stat');
   const $panelSubmit = document.getElementById('panelSubmit');
   const $report = document.getElementById('report');
   const $preview = document.getElementById('preview');
+  const $title = document.querySelector('h1');
 
-  // โชว์สรุป meta ในกล่อง preview (แทน RAW)
-  if ($preview) {
-    const meta = [
-      `source: ${data.meta?.source ?? '-'}`,
-      `count: ${data.meta?.count ?? ITEMS.length}`,
-      `missing_numbers: ${JSON.stringify(data.meta?.missing_numbers ?? [])}`
-    ].join('\n');
-    $preview.textContent = meta;
+  // แทรก dropdown เลือกวิชาเข้าไปในหัวการ์ด
+  const toolbarRow = document.querySelector('.card .row');
+  const $examWrap = document.createElement('div');
+  $examWrap.className = 'row';
+  $examWrap.style.marginRight = 'auto';
+  $examWrap.innerHTML = `
+    <label for="examSelect">ชุดข้อสอบ</label>
+    <select id="examSelect"></select>
+  `;
+  toolbarRow.prepend($examWrap);
+  const $examSelect = document.getElementById('examSelect');
+
+  // ===== C) สถานะภายใน =====
+  let DATA = null;          // payload จากไฟล์ json ปัจจุบัน
+  let ITEMS = [];           // แปลงเป็นรูปแบบใช้เรนเดอร์
+  let current = [];         // ชุดข้อที่ใช้งาน (เต็ม/สุ่ม)
+  let answers = new Map();  // no -> selectedIndex
+
+  // ===== D) Boot: โหลดรายชื่อไฟล์ + ตั้งค่า dropdown =====
+  init();
+
+  async function init(){
+    const files = await getExamFiles();
+    // เติม option ตามชื่อไฟล์
+    files.forEach(f => {
+      const op = document.createElement('option');
+      op.value = f;
+      op.textContent = f.replace(/\.json$/,'');
+      $examSelect.appendChild(op);
+    });
+
+    // เลือกไฟล์จากพารามิเตอร์ ?exam=... ถ้ามี
+    const urlFile = new URLSearchParams(location.search).get('exam');
+    if (urlFile && files.includes(urlFile)) $examSelect.value = urlFile;
+
+    $examSelect.addEventListener('change', () => loadExam($examSelect.value));
+    // โหลดครั้งแรก
+    await loadExam($examSelect.value || files[0]);
+
+    // Wire ปุ่ม
+    document.getElementById('btnStart').onclick  = ()=>start('full');
+    document.getElementById('btnRandom').onclick = ()=>start('random');
+    document.getElementById('btnReset').onclick  = ()=>{ answers=new Map(); render(); $report.innerHTML=''; };
+    document.getElementById('btnSubmit').onclick = grade;
+
+    // เริ่มต้นยังไม่เรนเดอร์ข้อจนกดเริ่ม
+    $quiz.innerHTML = '';
   }
 
-  // ===== 2) สถานะ =====
-  let current = [];
-  let answers = new Map(); // no -> selectedIndex
+  async function getExamFiles(){
+    try {
+      const r = await fetch(EXAM_BASE + 'manifest.json', {cache:'no-cache'});
+      if(!r.ok) throw 0;
+      const list = await r.json();
+      if(Array.isArray(list) && list.length) return list;
+      return FALLBACK_FILES;
+    } catch {
+      return FALLBACK_FILES;
+    }
+  }
 
-  // ===== 3) ฟังก์ชันหลัก =====
+  // ===== E) โหลดไฟล์ข้อสอบที่เลือก =====
+  async function loadExam(filename){
+    const res = await fetch(EXAM_BASE + filename, {cache:'no-cache'});
+    DATA = await res.json();
+
+    // แปลงเป็นโครงสร้างใช้งาน (อ่านเฉลยจาก A/B/C/D → index 0..3)
+    ITEMS = (DATA.questions || []).map(q => ({
+      no: q.no,
+      stem: q.question,
+      options: q.choices,
+      answerIndex: ({A:0,B:1,C:2,D:3})[q.answer] ?? null
+    })).sort((a,b)=>a.no-b.no);
+
+    // แสดงชื่อจาก meta.title และปรับ max สุ่มตาม count
+    const title = DATA.meta?.title || $examSelect.value.replace(/\.json$/,'');
+    $title.innerHTML = `ชุดข้อสอบ ${title} <span class="pill">ดึงจาก ${EXAM_BASE}${filename}</span>`;
+    const $num = document.getElementById('num');
+    if ($num) {
+      $num.max = String(DATA.meta?.count || ITEMS.length);
+      if (parseInt($num.value||'0',10) > parseInt($num.max,10)) $num.value = $num.max;
+    }
+
+    // อัปเดต preview ให้โชว์ meta ใหม่
+    if ($preview) {
+      const meta = [
+        `title: ${title}`,
+        `count: ${DATA.meta?.count ?? ITEMS.length}`,
+        `missing_numbers: ${JSON.stringify(DATA.meta?.missing_numbers ?? [])}`
+      ].join('\n');
+      $preview.textContent = meta;
+    }
+
+    // reset หน้าจอ
+    answers = new Map();
+    $report.innerHTML = '';
+    $panelSubmit.style.display = 'none';
+    $quiz.innerHTML = '';
+    $progress.style.width = '0%';
+    $stat.textContent = 'ยังไม่ได้เริ่ม';
+  }
+
+  // ===== F) โหมดเริ่มทำข้อสอบ =====
   function start(mode='full'){
     answers = new Map();
     $report.innerHTML = '';
     if(mode==='full'){
       current = [...ITEMS];
-    } else if(mode==='random'){
+    } else {
       const n = Math.max(1, Math.min(parseInt(document.getElementById('num').value||'20',10), ITEMS.length));
       current = shuffle([...ITEMS]).slice(0,n).sort((a,b)=>a.no-b.no);
     }
     render();
   }
 
-  function shuffle(arr){
-    for(let i=arr.length-1;i>0;i--){
-      const j=Math.floor(Math.random()*(i+1));
-      [arr[i],arr[j]]=[arr[j],arr[i]];
-    }
-    return arr;
-  }
-
+  // ===== G) เรนเดอร์ข้อสอบ =====
   function render(){
     $quiz.innerHTML = '';
     const info = document.createElement('div');
     info.className='card';
 
-    const missing = (data.meta?.missing_numbers ?? []);
+    const missing = (DATA.meta?.missing_numbers ?? []);
     info.innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end">
         <div>
           <div class="muted">จำนวนข้อที่ใช้ทดสอบ: <b>${current.length}</b> ข้อ
@@ -166,9 +242,11 @@
     updateProgress();
   }
 
+  // ===== H) เครื่องมืออื่น ๆ =====
+  function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+
   function updateProgress(){
-    const done = answers.size;
-    const total = current.length;
+    const done = answers.size, total = current.length;
     $progress.style.width = (done/total*100)+"%";
     document.getElementById('answeredCount').textContent = done;
     $stat.textContent = done===0? 'ยังไม่ได้เริ่ม' : `ตอบแล้ว ${done}/${total} ข้อ`;
@@ -202,8 +280,7 @@
         }).join('')}
       </details></div>`:''}
     `;
-    $report.innerHTML='';
-    $report.appendChild(box);
+    $report.innerHTML=''; $report.appendChild(box);
   }
 
   function review(){
@@ -211,9 +288,9 @@
     nameSet.forEach(n => {
       const inputs = document.querySelectorAll(`input[name="${n}"]`);
       inputs.forEach(inp=>{
-        const parts = inp.id.split('_');
-        const no = parseInt(parts[0].replace(/\D/g,''),10);
-        const ix = parseInt(parts[1],10);
+        const [noStr, ixStr] = inp.id.split('_');
+        const no = parseInt(noStr.replace(/\D/g,''),10);
+        const ix = parseInt(ixStr,10);
         const q = current.find(x=>x.no===no);
         const parent = inp.closest('.opt');
         parent.style.borderColor = (ix===q.answerIndex) ? 'var(--ok)' : '#2a2d3a';
@@ -222,16 +299,9 @@
     });
   }
 
-  function toggleShuffle(){
-    current = shuffle(current);
-    render();
-  }
+  function toggleShuffle(){ current = shuffle(current); render(); }
 
-  function showKey(){
-    current.forEach(q=> answers.set(q.no, q.answerIndex));
-    updateProgress();
-    review();
-  }
+  function showKey(){ current.forEach(q=> answers.set(q.no, q.answerIndex)); updateProgress(); review(); }
 
   function downloadCSV(){
     const rows = [['No','Your','Correct','Result','Question']];
@@ -243,26 +313,15 @@
     }
     const csv = rows.map(r=>r.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
     const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'exam_result.csv';
-    a.click();
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'exam_result.csv'; a.click();
   }
 
-  // ===== 4) Wire ปุ่มบนหน้า =====
+  // ให้ปุ่มเรียกใช้ได้หลัง render
   window.toggleShuffle = toggleShuffle;
   window.showKey = showKey;
   window.downloadCSV = downloadCSV;
-
-  document.getElementById('btnStart').onclick = ()=>start('full');
-  document.getElementById('btnRandom').onclick = ()=>start('random');
-  document.getElementById('btnReset').onclick = ()=>{ answers=new Map(); render(); $report.innerHTML=''; };
-  document.getElementById('btnSubmit').onclick = grade;
-
-  // เรนเดอร์ค่าเริ่มต้น (ยังไม่เริ่ม)
-  // แค่โชว์ dashboard + ปุ่ม ยังไม่สร้างข้อจนกว่าจะกดเริ่ม
-  $quiz.innerHTML = '';
 })();
 </script>
+
 
 
